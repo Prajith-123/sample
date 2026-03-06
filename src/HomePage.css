@@ -1,0 +1,357 @@
+.home-page {
+  /* background: #537D5D !important; */
+  background: linear-gradient(180deg, #537D5D 0%, #328E6E 100%) !important;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================================
+   HEADER & PILL BUTTONS
+================================ */
+.main-header {
+  background: #537D5D !important;
+  padding: 20px 0 30px;
+  border-bottom: 1px solid #d8e983 !important;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.auth-pill-group {
+  display: flex;
+  gap: 12px;
+}
+
+.pill-btn {
+  background: #d8e983;
+  border: 1px solid #73946B;
+  color: #1e293b;
+  padding: 8px 20px;
+  border-radius: 15px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500 !important;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pill-btn.active {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+}
+
+.pill-btn:hover:not(.active) {
+  background: #73946B;
+  color: white;
+}
+
+/* ================================
+   SUB NAVBAR
+================================ */
+.sub-navbar {
+  background: #67AE6E;
+  border-bottom: 1px solid #73946B;
+  padding: 20px 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-item.active {
+  color: #1e293b;
+  font-weight: 600;
+  border-bottom: 2px solid #73946B;
+  padding-bottom: 4px;
+}
+
+/* ================================
+   HERO GRID & 3D FLIP CARD
+================================ */
+.main-content {
+  padding-top: 40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  margin-bottom: 80px;
+  align-items: stretch;
+}
+
+.content-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  height: 100%;
+}
+
+.pillar-card,
+.content-card {
+  transition: all 0.35s ease;
+}
+
+.flip-card {
+  height: 100%;
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-tag {
+  color: #6366f1;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.hero-description {
+  color: #334155 !important;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* ================================
+   FOUNDER & BIO STYLING
+================================ */
+.founder-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.founder-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 40%;
+  border: 4px solid #d8e983;
+  overflow: hidden;
+}
+
+.founder-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founder-text h3 {
+  font-size: 1.2rem;
+  color: #000000 !important;
+  margin-bottom: 5px;
+}
+
+.founder-text p {
+  color: #000000 !important;
+}
+
+.bio-scroll-content {
+  overflow-y: auto;
+  padding-right: 8px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.bio-scroll-content::-webkit-scrollbar {
+  width: 4px;
+}
+.bio-scroll-content::-webkit-scrollbar-thumb {
+  background: #c4d9ff;
+  border-radius: 10px;
+}
+
+.bio-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #000000 !important;
+}
+
+.info-link-btn {
+  background: transparent;
+  border: 1px solid #73946B;
+  color: #1e293b;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+.info-link-btn.top-btn {
+  margin: 0;
+}
+.info-link-btn:hover {
+  background: #73946B;
+  color: white;
+}
+
+/* ================================
+   PILLARS / INITIATIVES
+================================ */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #1e293b;
+  border-left: 4px solid #73946B;
+  padding-left: 15px;
+  text-align: left;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.pillar-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 30px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.pillar-card p {
+  color: #475569;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  background: #d8e983;
+  border-color: #73946B;
+}
+.pillar-icon {
+  font-size: 2rem;
+  color: #6366f1;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.pillar-card h3 {
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.pillar-card p {
+  color: #0f0f0f;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* ================================
+   FOOTER
+================================ */
+.main-footer {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #d8e983;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-pill-group {
+    gap: 8px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}

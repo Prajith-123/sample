@@ -1,0 +1,348 @@
+.training-container {
+  padding: 10px;
+  color: #fff;
+  max-width: 90%;
+  margin: 0px auto 80px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.training-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.training-subtitle {
+  color: #aaa;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Wrapper for the bar to take all remaining space */
+.progress-bar-wrapper {
+  flex-grow: 1;
+  height: 8px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Filled portion */
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2979ff, #8e2de2);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+/* Progress text */
+.progress-text {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+/* Filled portion of the bar */
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2979ff, #8e2de2);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+/* Progress text */
+.progress-text {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Days list container */
+.days-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Day item */
+.day-item {
+  background: #111;
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  cursor: default;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Clickable day highlight */
+.day-item.clickable {
+  cursor: pointer;
+}
+
+.day-item.clickable:hover {
+  background: #222;
+}
+
+/* Completed day style */
+.day-item.completed {
+  background: linear-gradient(135deg, #2979ff, #8e2de2);
+  color: white;
+  box-shadow: 0 0 15px rgba(41, 121, 255, 0.6);
+}
+
+.day-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.day-icon .fa-check-circle {
+  color: #00c853;
+  font-size: 22px;
+}
+
+/* Circle for incomplete */
+.circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  background: transparent;
+}
+
+/* Day info text */
+.day-info strong {
+  font-size: 14px;
+  display: block;
+}
+
+.day-info p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Lock icon on locked days */
+.lock-icon {
+  position: absolute;
+  right: 20px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Start Day button */
+.start-day-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, #2979ff, #8e2de2);
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.start-day-btn:hover {
+  background: linear-gradient(90deg, #8e2de2, #2979ff);
+  box-shadow: 0 0 10px rgba(41, 121, 255, 0.7);
+}
+
+.start-day-btn.locked {
+  background: #555 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #bbb;
+}
+
+/* Final assessment box */
+.final-assessment {
+  background-color: #121212; /* Dark background to match your theme */
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  text-align: center; /* Center contents */
+}
+
+.final-assessment h3 {
+  color: #007bff; /* Blue for final assessment title */
+  margin-bottom: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.final-assessment-desc {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+/* Attempted final assessment (looks like primary but disabled) */
+.complete-attempted {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #2979ff, #8e2de2);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.complete-attempted .finish-icon {
+  color: #fff;
+}
+
+.complete-locked {
+  display: inline-flex; /* inline-flex so icon and text align */
+  align-items: center;
+  background: #444;
+  color: #bbb;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: not-allowed;
+}
+
+.finish-icon {
+  font-size: 1.2em;
+  color: #bbb;
+}
+
+/* =============================================
+   TRAINING MODULE MOBILE RESPONSIVENESS
+   ============================================= */
+
+@media (max-width: 768px) {
+  .training-container {
+    max-width: 95%;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .training-title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  /* 1. Progress Bar Fix */
+  .progress-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .progress-bar-wrapper {
+    width: 100%;
+    height: 10px; /* Slightly thicker for mobile visibility */
+  }
+
+  /* 2. Day Item Layout Transformation */
+  .day-item {
+    flex-direction: column; /* Stack vertically */
+    align-items: flex-start;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  /* Remove absolute positioning so buttons don't overlap text */
+  .start-day-btn,
+  .lock-icon {
+    position: static;
+    transform: none;
+    width: 100%; /* Full width button for easier tapping */
+    text-align: center;
+  }
+
+  .lock-icon {
+    order: -1; /* Move lock to top right or stay static */
+    text-align: right;
+    width: auto;
+    align-self: flex-end;
+  }
+
+  .day-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .day-info strong {
+    font-size: 15px;
+    padding-right: 30px; /* Leave space for the icon */
+    line-height: 1.4;
+  }
+
+  /* 3. Final Assessment Card */
+  .final-assessment {
+    padding: 25px 15px;
+  }
+
+  .complete-locked,
+  .complete-attempted {
+    width: 100%;
+    justify-content: center;
+    font-size: 13px;
+    padding: 15px 10px;
+  }
+  /* 1. Hide the check icon in the Day Item circles */
+  .day-icon .fa-check-circle {
+    display: none;
+  }
+
+  /* 2. Hide the check icon inside the buttons (Attempted/Final Assessment) */
+  .finish-icon.fa-check-circle {
+    display: none;
+  }
+
+  /* 3. Optional: If you want to hide the lock icon too */
+  .lock-icon {
+    display: none;
+  }
+
+  /* Adjust the day-icon container if it looks empty */
+  .day-item.completed .day-icon {
+    display: none; /* Completely removes the icon space for completed items */
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .training-title {
+    font-size: 20px;
+  }
+
+  .day-info p {
+    font-size: 11px;
+  }
+
+  .start-day-btn {
+    padding: 14px; /* Larger touch target */
+  }
+}

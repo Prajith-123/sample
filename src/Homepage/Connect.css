@@ -1,0 +1,202 @@
+.connect-page {
+  background: linear-gradient(180deg, #537D5D 0%, #328E6E 100%);
+  color: #1e293b;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* HERO */
+/* CONNECT HERO */
+.connect-hero {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px 50px;
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Flex container for logo + heading */
+.connect-hero-header {
+  display: flex;
+  align-items: center;      /* Vertically center logo + heading */
+  justify-content: center;  /* Center the combined block horizontally */
+  gap: 20px;                /* Space between logo and heading */
+  margin-bottom: 20px;
+}
+
+/* Logo */
+.connect-hero-logo {
+  height: 120px;             /* Adjust size as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Main heading */
+.connect-hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  margin: 0;
+  color: #1e293b;
+  padding-right: 120px;
+}
+
+/* Subheading */
+.connect-hero h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Paragraphs */
+.connect-hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+/* Sub-text paragraph */
+.connect-hero .sub-text {
+  font-style: italic;
+  color: #ffffff;
+}
+
+/* SECTIONS */
+.connect-section {
+  padding: 50px 8%;
+  margin-bottom: 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.section-header h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #1e293b;
+  border-left: 4px solid #73946B;
+  padding-left: 12px;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 12px;
+  color: #475569;
+  position: relative;
+  padding-left: 22px;
+}
+
+.feature-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #73946B;
+  font-weight: bold;
+}
+
+.note-box {
+  background: #d8e983;
+  padding: 14px 18px;
+  border-left: 4px solid #73946B;
+  border-radius: 12px;
+  font-size: 14px;
+  max-width: 700px;
+  color: #1e293b;
+}
+
+/* VALUE SECTION */
+.value-section {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.value-section h3 {
+  margin-bottom: 40px;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.value-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  background: #d8e983;
+}
+
+/* WHY SECTION */
+.why-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 50px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.why-section h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #1e293b;
+}
+
+.why-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-section li {
+  margin-bottom: 14px;
+  padding-left: 28px;
+  position: relative;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.why-section li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #73946B;
+  font-weight: bold;
+}
+
+/* CONTACT */
+.contact-section {
+  max-width: 900px;
+  margin: 40px auto 80px;
+  padding: 50px;
+  background: #D8E983;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.contact-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.contact-phone {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}

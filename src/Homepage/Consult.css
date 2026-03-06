@@ -1,0 +1,140 @@
+.consult-page {
+  background: linear-gradient(180deg, #537D5D 0%, #328E6E 100%);
+  color: #1e293b;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* HERO */
+.consult-hero {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px 50px;
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
+}
+
+.consult-hero-header {
+  display: flex;
+  align-items: center;           /* Vertically center logo and heading */
+  justify-content: center;       /* Center the combined block horizontally */
+  gap: 20px;                     /* Space between logo and heading */
+  margin-bottom: 20px;
+  padding-right: 120px;
+}
+
+.consult-hero-logo {
+  height: 120px;                  /* Adjust logo size */
+  width: auto;
+  object-fit: contain;
+}
+
+.consult-hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  margin: 0;
+  color: #1e293b;
+}
+
+.consult-hero h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.consult-hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.consult-hero .sub-text {
+  font-style: italic;
+  color: #ffffff;
+}
+
+/* MODELS SECTION */
+.consult-models {
+  padding: 60px 8%;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+  gap: 40px;
+}
+
+/* MODEL CARD */
+.model-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.35s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-8px);
+  background: #d8e983;
+}
+
+/* HEADER */
+.model-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.model-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.model-tag {
+  background: #d8e983;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.model-desc {
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+/* LIST */
+.model-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.model-card li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+  color: #475569;
+}
+
+.model-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #73946B;
+  font-weight: bold;
+}
+
+/* OUTCOME */
+.outcome-box {
+  background: #d8e983;
+  padding: 14px 18px;
+  border-left: 4px solid #73946B; 
+  border-radius: 12px;
+  font-size: 14px;
+  color: #1e293b;
+}

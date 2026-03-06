@@ -1,0 +1,157 @@
+/* ================================
+   LOGIN CARD
+================================ */
+.register-card {
+  background: #121417;
+  border-radius: 18px;
+  padding: 32px;
+  border: 2px solid #2c2f36;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* ================================
+   ROLE TOGGLE
+================================ */
+.role-label {
+  text-align: left;
+  font-size: 13px;
+  color: #cfcfcf;
+  margin-bottom: 8px;
+}
+
+.role-toggle {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #2c2f36;
+  background: #1e2129;
+  color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.role-btn.active {
+  background: #f5a623;
+  color: #0f1115;
+  font-weight: 700;
+}
+
+.role-btn:hover {
+  border-color: #f5a623;
+}
+
+/* ================================
+   FORM
+================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #f5a623;
+}
+
+.form-group input {
+  background: #1e2129;
+  border: 2px solid #2c2f36;
+  border-radius: 10px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #f5a623;
+}
+
+/* ================================
+   LOGIN OPTIONS
+================================ */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0 20px;
+  font-size: 13px;
+  color: #cfcfcf;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.remember-me input {
+  accent-color: #f5a623;
+}
+
+.forgot-password {
+  cursor: pointer;
+  color: #f5a623;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+.login-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(45deg, #f5a623, #e08e1e);
+  color: #0f1115;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: linear-gradient(45deg, #e08e1e, #c77d18);
+  transform: translateY(-2px);
+}
+
+/* Toast container */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: -400px; /* start off screen */
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: right 0.5s ease;
+}
+
+/* Show toast */
+.toast.show {
+  right: 20px; /* slide in */
+}
+
+/* Success / Error colors */
+.toast.success {
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.toast.error {
+  background: linear-gradient(90deg, #f44336, #e53935);
+}

@@ -1,0 +1,674 @@
+.dashboard-container {
+  padding: 40px;
+  color: #fff;
+  position: relative;
+  padding-top: 80px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.dashboard-title {
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px; /* distance from top of container */
+  left: 40px;
+}
+
+.dashboard-subtitle {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #0f0f0f;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box; /* ensure padding counted in width */
+  min-width: 0; /* allow the card to shrink inside the grid */
+}
+
+.stat-icon {
+  font-size: 20px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-left: 15px;
+  flex-shrink: 0; /* keep icon size fixed so text can shrink */
+}
+
+/* Right-side text */
+.stat-info {
+  display: flex;
+  flex-direction: column; /* KEY LINE */
+  justify-content: center;
+}
+
+.stat-text {
+  min-width: 0; /* allow text block to shrink inside flex container */
+  overflow: hidden; /* prevent content from overflowing card */
+}
+
+.stat-text h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* keep numbers tidy when space is tight */
+}
+
+.stat-text p {
+  margin: 2px 0 0; /* tiny gap from h2 */
+  line-height: 1; /* same line-height */
+  color: #aaa;
+  font-size: 14px;
+  overflow-wrap: break-word; /* allow long words to wrap */
+}
+
+.stat-text h2 {
+  font-size: 22px;
+  margin: 0;
+  line-height: 1.5; /* keeps h2 compact */
+}
+
+.stat-text p {
+  margin: 2px 0 0; /* tiny gap from h2 */
+  line-height: 1; /* same line-height */
+  color: #aaa;
+  font-size: 14px;
+}
+
+.blue {
+  background: linear-gradient(135deg, #0f1a33, #102a5e);
+  border: 1px solid #2979ff;
+}
+
+.green {
+  background: linear-gradient(135deg, #0f2a1a, #1b5e20);
+  border: 1px solid #00c853;
+}
+
+.orange {
+  background: linear-gradient(135deg, #2a1a0f, #5e3b10);
+  border: 1px solid #ff9100;
+}
+
+.purple {
+  background: linear-gradient(135deg, #1a0f2a, #3a1b5e);
+  border: 1px solid #aa00ff;
+}
+
+/* Course */
+.section-title {
+  margin: 30px 0 15px;
+}
+
+.course-card {
+  position: relative;
+  background: #0d0d0d;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.badge {
+  background: #2979ff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.progress-section {
+  margin: 15px 0;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #aaa;
+  margin-right: 270px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between; /* labels at two ends */
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 5px; /* spacing above bar */
+}
+
+.progress-bar {
+  height: 8px;
+  background: #333;
+  border-radius: 10px;
+  width: 100%; /* full width of progress-section */
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2979ff, #8e2de2);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.primary-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #2979ff, #8e2de2);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(90deg, #8e2de2, #2979ff); /* reverse gradient */
+  box-shadow: 0 5px 15px rgba(41, 121, 255, 0.4); /* subtle glow */
+}
+
+.quick-stats {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  bottom: 25px;
+  background: linear-gradient(135deg, #0f1a33, #102a5e);
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.quick-stats h4 {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #2c2c2c;
+  padding-bottom: 5px;
+}
+
+/* Flex for heading + icon */
+.quick-stats-header {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and heading */
+  margin-bottom: 12px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* spacing between icon, label, and value */
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.quick-stats .stat-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  /* Use same gradient as stat-card background (optional: fallback color) */
+  color: inherit; /* inherits parent text color */
+}
+
+.stat-label {
+  flex: 1; /* takes remaining space */
+  color: #ccc;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #fff;
+  font-weight: bold;
+}
+
+.stat-text small {
+  font-size: 0.7em;
+  color: #555;
+  margin-left: 4px;
+}
+
+/* Tests */
+.locked-tests {
+  background: #0f0f0f;
+  padding: 50px;
+  border-radius: 10px;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Mentor Dashboard */
+/* Student Tracking Table */
+.student-table-card {
+  background: #0f0f0f;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  margin-top: 20px;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.student-table thead th {
+  text-align: left;
+  font-size: 14px;
+  color: #ccc;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #222;
+}
+
+.student-table tbody tr {
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.student-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.student-table td {
+  padding: 16px 0;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.email {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.view-attempts-btn {
+  margin-top: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.view-attempts-btn:hover {
+  border-color: rgba(41,121,255,0.7);
+  color: #2979ff;
+}
+
+/* Attempts Modal */
+.attempts-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 16px;
+}
+
+.attempts-modal {
+  width: 920px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  background: #0f0f0f;
+  border-radius: 10px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  color: #fff;
+  position: relative;
+}
+
+.attempts-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.attempts-section { margin-top: 14px; }
+.attempts-section h4 { margin: 6px 0 10px; color: #ddd; }
+.mcq-list, .theory-list { list-style: none; padding: 0; margin: 0; }
+.mcq-item, .theory-item { padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.02); margin-bottom: 10px; }
+.mcq-q, .theory-q { font-weight: 600; color: #e6eefc; margin-bottom: 6px; }
+.mcq-meta { display: flex; gap: 12px; align-items: flex-start; color: #cfcfcf; font-size: 14px; flex-direction: column; }
+.mcq-selected { padding: 6px 8px; border-radius: 6px; display: inline-block; }
+.mcq-correct { padding: 6px 8px; border-radius: 6px; display: inline-block; }
+.mcq-ok { background: rgba(142, 240, 142, 0.08); color: #8ef08e; }
+.mcq-wrong { background: rgba(240, 142, 142, 0.04); color: #ff8e8e; }
+
+.mcq-options { margin-top: 8px; padding-left: 18px; color: #d7d7d7; }
+.mcq-option-item { padding: 6px 8px; border-radius: 6px; margin-bottom: 6px; background: rgba(255,255,255,0.01); }
+.mcq-option-item .option-index { color: #9fb1ff; margin-right: 8px; }
+.option-correct { border-left: 4px solid rgba(142,240,142,0.25); background: rgba(142,240,142,0.02); }
+.option-selected-wrong { border-left: 4px solid rgba(255,142,142,0.25); background: rgba(255,142,142,0.02); }
+.theory-answer { margin-top: 8px; color: #ddd; white-space: pre-wrap; }
+.empty { color: #999; padding: 8px 0; }
+
+/* Theory expected keywords */
+.theory-meta { display:flex; flex-direction: column; gap:8px; margin-bottom:8px; }
+.theory-stats { color:#bfc9d9; font-size:13px; }
+.expected-keywords { margin-top:6px; }
+.keyword-list { margin-top:6px; display:flex; gap:8px; flex-wrap:wrap; }
+.keyword-badge { padding:6px 8px; border-radius:12px; font-size:13px; background: rgba(255,255,255,0.03); color:#d3d3d3; }
+.keyword-matched { background: rgba(142,240,142,0.08); color: #8ef08e; border: 1px solid rgba(142,240,142,0.12); }
+.keyword-unmatched { background: rgba(255,255,255,0.02); color:#cfcfcf; border: 1px solid rgba(255,255,255,0.02); }
+.keyword-summary { margin-top:6px; color:#9fb1ff; font-size:13px; }
+
+@media (max-width: 768px) {
+  .attempts-modal { padding: 14px; }
+  .mcq-meta { flex-direction: column; align-items: flex-start; }
+}
+
+/* Progress bar inside table */
+.progress-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mini-progress {
+  width: 120px;
+  height: 6px;
+  background: #333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.mini-progress-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 6px;
+}
+
+/* Score badges */
+.score-badge {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.score-badge.green {
+  background: rgba(0, 200, 83, 0.15);
+  color: #00c853;
+}
+
+.score-badge.yellow {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+/* Learning Degree */
+.degree {
+  font-weight: 600;
+}
+
+.degree.excellent {
+  color: #00e676;
+}
+
+.degree.good {
+  color: #ffca28;
+}
+
+/* =============================================
+   DASHBOARD MOBILE RESPONSIVENESS
+   ============================================= */
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+    padding-top: 20px; /* Reset top padding */
+    width: 95%;
+  }
+
+  .dashboard-title {
+    position: static; /* Remove absolute positioning */
+    font-size: 26px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .dashboard-subtitle {
+    margin-bottom: 25px;
+  }
+
+  /* 1. Stats Grid - Stack cards vertically */
+  .stats-grid {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+
+  .stat-card {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .stat-icon {
+    margin-left: 0;
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  /* 2. Orange Card Special Handling */
+  /* This ensures the scrollable daily scores are easy to read */
+  .stat-card.orange .stat-text div {
+    max-height: 100px !important; /* Give more room on mobile */
+  }
+
+  /* 3. Course Card & Progress */
+  .course-card {
+    padding: 20px;
+  }
+
+  .progress-labels {
+    font-size: 11px;
+  }
+
+  .primary-btn {
+    width: 100%; /* Full width button for thumb-tapping */
+    padding: 14px;
+  }
+
+  /* 4. Navigation/Header adjustments */
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .student-name {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #f5a623;
+  }
+
+  /* 5. Mentor Table (If viewed on mobile) */
+  /* Tables are notoriously hard on mobile; we make it scrollable */
+  /* Avoid forcing horizontal scroll on mobile; allow responsive stacking */
+  .student-table-card {
+    overflow-x: visible; /* let contents wrap/stack instead of scrolling */
+    -webkit-overflow-scrolling: auto;
+  }
+
+  .student-table {
+    min-width: 0; /* allow table to shrink and let mobile styles stack rows */
+    width: 95%;
+    box-sizing: border-box;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 22px;
+  }
+
+  .stat-text h2 {
+    font-size: 18px;
+  }
+
+  /* Hide the quick-stats sidebar on mobile if it exists 
+     to prevent it from floating over content */
+  .quick-stats {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 22px;
+  }
+
+  .stat-text h2 {
+    font-size: 18px;
+  }
+
+  /* Centered Quick Stats Card for Mobile */
+  .quick-stats {
+    position: static;      /* Removes the "floating" right-side anchor */
+    width: 100%;           /* Takes full width of the container */
+    max-width: 320px;      /* Prevents it from getting too wide on larger phones */
+    margin: 30px auto;     /* Centers the card horizontally with top/bottom spacing */
+    box-sizing: border-box;
+    display: block;        /* Ensures it respects the margin auto */
+    padding: 25px;         /* Slightly more padding for a "premium" feel */
+  }
+
+  .quick-stats-header {
+    justify-content: center; /* Centers the header icon and text */
+  }
+
+  .stat-row {
+    justify-content: center; /* Optional: centers the rows inside the card */
+    gap: 12px;
+  }
+}
+
+/* =============================================
+   MENTOR DASHBOARD MOBILE RESPONSIVENESS
+   ============================================= */
+
+@media (max-width: 768px) {
+  /* 1. Statistics Grid */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid on tablets/large phones */
+    gap: 12px;
+  }
+
+  /* 2. Transform Table into Cards */
+  .student-table-card {
+    background: transparent; /* Remove background from the container */
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .student-table, 
+  .student-table thead, 
+  .student-table tbody, 
+  .student-table th, 
+  .student-table td, 
+  .student-table tr {
+    display: block; /* Break the table structure */
+  }
+
+  /* Hide table headers on mobile */
+  .student-table thead tr {
+    position: absolute;
+    top: -9999px;
+    right: -9999px;
+  }
+
+  .student-table tbody tr {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .student-table td {
+    border: none;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    font-size: 13px;
+  }
+
+  /* Add labels before the data for context */
+  .student-table td::before {
+    content: attr(data-label); /* Requires adding data-label to JSX */
+    float: left;
+    font-weight: bold;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+
+  /* Adjustments for the Student Info cell */
+  .student-table td:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #222;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+  }
+
+  .student-table td:first-child::before {
+    margin-bottom: 5px;
+  }
+
+  .student-table td:first-child strong {
+    font-size: 16px;
+    color: #2979ff;
+  }
+
+  /* Progress bar adjustment */
+  .progress-cell {
+    width: 60%;
+    justify-content: flex-end;
+  }
+
+  .mini-progress {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr; /* 1x1 grid on small phones */
+  }
+  
+  .dashboard-title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
